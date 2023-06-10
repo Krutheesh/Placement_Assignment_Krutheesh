@@ -18,20 +18,32 @@ function App() {
           text:action.payload
         }
         return [...state,newTodo]
+      case 'UPDATE':
+
+      case 'DEL': 
+        const del = state.filter(ele => {
+          return ele.id !== action.payload
+        })
+        return [...state,del]
+
+
 
     }
   }
   const [state, dispatch] = useReducer(reducer,[])
 console.log(state)
 
+
 //functions
+
 
   const handleAdd = (todo) => {
     dispatch({type:'ADD', payload:todo})
+    setTodo('')
   }
   
 
-  
+
   const formHandler = (e) => {
     e.preventDefault()
     // console.log(todo)
@@ -41,9 +53,9 @@ console.log(state)
     else{
       handleAdd(todo)
     }
-    
   }
- 
+
+
   return (
 
    <>
@@ -57,7 +69,9 @@ console.log(state)
       (state.length !== 0) ? state.map(ele => {
         return(
           <div key={ele.id}>
+
           {ele.text}
+            
            </div>
         )
         
