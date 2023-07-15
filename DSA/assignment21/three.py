@@ -29,13 +29,6 @@ def convert_helper(node):
 
     return head
 
-# Test the code
-# Input binary tree
-#         10
-#        /   \
-#      5      20
-#            /  \
-#           30   35
 root = Node(10)
 root.left = Node(5)
 root.right = Node(20)

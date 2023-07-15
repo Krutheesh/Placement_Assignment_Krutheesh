@@ -39,15 +39,8 @@ def find_distance_to_node(node, target, distance):
         return find_distance_to_node(node.right, target, distance + 1)
 
 
-# Test the code
-# Create the BST from the given values
-#             8
-#           /   \
-#         3      10
-#       /  \       \
-#      1    6       14
-#          / \     /
-#         4   7   13
+
+
 root = TreeNode(8)
 root.left = TreeNode(3)
 root.right = TreeNode(10)
