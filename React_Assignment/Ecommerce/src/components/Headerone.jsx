@@ -2,7 +2,7 @@ import React from 'react'
 import hero from './assets/hero.jpg'
 function Headerone({heading}) {
   return (
-    <div className='flex flex-col-reverse items-center justify-center md:flex md:flex-row md:justify-center py-[4rem] md:space-x-4 space-x-0  md:space-y-0'>
+    <div className='flex flex-col-reverse items-center justify-between md:flex md:flex-row md:justify-center py-[5rem]   md:space-y-0'>
       <div className=' w-[30rem] text-left py-2'>
         <p className='text-gray-600'>Welcome to</p>
         <span className='text-[2.5rem] font-semibold'>{heading}</span>

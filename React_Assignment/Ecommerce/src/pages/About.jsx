@@ -1,9 +1,9 @@
 import React from 'react'
-
+import Headerone from '../components/Headerone'
 function About() {
   return (
     <div>
-      iam About
+      <Headerone heading={"K ECOMMERCE"}/>
     </div>
   )
 }

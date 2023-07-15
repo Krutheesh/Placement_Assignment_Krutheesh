@@ -8,6 +8,7 @@ import Cart from './pages/Cart.jsx'
 import Contact from './pages/Contact.jsx'
 import Login from './pages/Login.jsx'
 import Product from './pages/Product.jsx'
+import ProductRedux from './ProductRedux.jsx'
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 
 const appRouter = createBrowserRouter([
