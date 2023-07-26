@@ -1,20 +1,27 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import FilterSection from '../components/FilterSection'
+import ProductList from '../components/ProductList'
+import Sort from '../components/Sort'
+
 function Product() {
-  const products = useSelector((state) => state.ecom.products)
-  console.log(products)
+  
   return (
     <div>
-      {
-        products.map((ele,index) => 
-           (
-            <div key={index}>
-                {ele.name}
-              </div>
-          )
-        )
-      }
-     
+      
+     <div className=' px-[10rem] flex '>
+
+      <div className='w-[30%]'>
+        <FilterSection/>
+      </div>
+
+      <div className='w-[70%]'>
+      <Sort/>
+        <ProductList/>
+       
+      </div>
+      
+     </div>
+
     </div>
   )
 }

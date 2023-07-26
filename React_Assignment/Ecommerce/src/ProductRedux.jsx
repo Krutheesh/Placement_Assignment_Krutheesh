@@ -4,8 +4,9 @@ import { addProducts } from './Slice'
 import {useSelector, useDispatch} from 'react-redux'
 function ProductRedux() {
 
+ 
 
-  const ecomstore = useSelector((state) => state.ecom.value)
+
   const dispatch = useDispatch()
 const apiData = async() => {
   try{
