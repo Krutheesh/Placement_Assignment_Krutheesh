@@ -7,7 +7,7 @@ function Sort() {
 const [valop,setValop] = useState('all')
 const dispatch = useDispatch()
 const handleSort = (event) => {
-  dispatch(all())
+ 
 setValop(event.target.value)
  
  console.log(event.target.value)
