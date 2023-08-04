@@ -10,7 +10,9 @@ import Login from './pages/Login.jsx'
 import Product from './pages/Product.jsx'
 import ProductRedux from './ProductRedux.jsx'
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
-
+import SingleProduct from './components/SingleProduct.jsx'
+import { Provider } from 'react-redux'
+import { Store } from './app/Store.jsx'
 const appRouter = createBrowserRouter([
   {
     path:'/',
@@ -42,6 +44,11 @@ const appRouter = createBrowserRouter([
         element:<Cart/>
       }
     ]
+    
+  },
+  {
+    path:'/singleproduct/:id',
+    element:<SingleProduct/>
   }
 ])
 
@@ -53,6 +60,10 @@ const appRouter = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <Provider store={Store}>
     <RouterProvider router={appRouter}/>
+    </Provider>
+    
+    
   </React.StrictMode>,
 )
