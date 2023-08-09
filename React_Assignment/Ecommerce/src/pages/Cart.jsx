@@ -5,14 +5,14 @@ import { useDispatch } from "react-redux";
 import { incr,decr } from "../Slice";
 function Cart() {
   const items = useSelector((state) => state.ecom.cartItems);
-  // const [totalPrice, setTotalprice] = useState(0)
+ 
   const dispatch = useDispatch()
-  console.log(items);
+  // console.log(items);
   const sum = items.reduce((ac,ele) => {
       return ac+ele.ai.price*ele.noItems 
   },0)
   // console.log(sum)
-  // setTotalprice(sum)
+ 
   return (
     <div className="px-[8rem]">
       <div className="mx-auto max-w-7xl px-2 lg:px-0">
@@ -22,7 +22,7 @@ function Cart() {
           </h1>
           <div className="flex justify-between">
             <div className="w-[70%]">
-              {items.map((ele, index) => {
+              { (items.length !==0 )?items.map((ele, index) => {
                 return (
                   <form
                     key={index}
@@ -66,11 +66,22 @@ function Cart() {
                                   <div className="mt-1 flex items-end">
                                     
                                     <p className="text-sm font-medium text-gray-900">
-                                        ₹{ele.ai.price}
+                                      ₹{ele.ai.price}
                                     </p>
                                       
+                    
                                     
                                   </div>
+                                  <div className="mt-1 flex items-end">
+                                    
+                                    <p className="text-sm font-medium text-gray-900">
+                                      ₹{`${ele.ai.price} X ${ele.noItems} =`}   ₹ {ele.ai.price * ele.noItems}
+                                    </p>
+                                      
+                    
+                                    
+                                  </div>
+                        
                                 </div>
                               </div>
                             </div>
@@ -130,7 +141,7 @@ function Cart() {
                     </div>
                   </form>
                 );
-              })}
+              }):<div className=" mt-[8rem] text-center text-[2rem] text-gray-900 font-bold">Empty Cart </div>}
             </div>
 
             <section
@@ -148,7 +159,7 @@ function Cart() {
                   <div className="flex items-center justify-between">
                     <dt className="text-sm text-gray-800">Price</dt>
                     <dd className="text-sm font-medium text-gray-900">
-                      
+                    {sum}
                     </dd>
                   </div>
                   <div className="flex items-center justify-between pt-4">
@@ -156,7 +167,7 @@ function Cart() {
                       <span>Discount</span>
                     </dt>
                     <dd className="text-sm font-medium text-green-700">
-                     {sum}
+                    
                     </dd>
                   </div>
                   <div className="flex items-center justify-between py-4">
@@ -170,12 +181,12 @@ function Cart() {
                       Total Amount
                     </dt>
                     <dd className="text-base font-medium text-gray-900">
-                      ₹ 48,967
+                      {sum}
                     </dd>
                   </div>
                 </dl>
                 <div className="px-2 pb-4 font-medium text-green-700">
-                  You will save ₹ 3,431 on this order
+                  You will save ₹ 00000 on this order
                 </div>
               </div>
             </section>

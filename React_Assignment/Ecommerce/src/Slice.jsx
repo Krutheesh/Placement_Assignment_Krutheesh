@@ -4,9 +4,9 @@ const initialState = {
   varProducts:[],
   price:6000000,
   cartItems:[],
-  noItems:0
-}
 
+  
+}
 export const Slice = createSlice({
   name:'ecom',
   initialState,
